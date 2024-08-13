@@ -18,7 +18,7 @@ using System.Collections;
         public float turnSpeed = 100;
 
         [Tooltip("The maximum angle to which the player can turn. This is both for right and left directions")]
-        public float turnRange = 30;
+        public float turnRange = 25;
 
         [Tooltip("The effect that appears when this player dies")]
         public Transform deathEffect;

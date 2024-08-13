@@ -47,40 +47,43 @@ MonoBehaviour:
   playerObject: {fileID: 0}
   groundObject: {fileID: 0}
   groundRepeatDistance: 20
-  streetEdge: 2.5
-  streetEdgeDamage: 10
+  streetEdge: 4.2
+  streetEdgeDamage: 8
   streetEdgeEffect: {fileID: 0}
   streetEdgeSound: {fileID: 8300000, guid: 0d2e5bbaf40a20544b400c0415a531a2, type: 3}
   spawnObstacles:
-  - spawnObject: {fileID: 4000013222017146, guid: 88f15237c0383884298f7014743ade84, type: 3}
+  - spawnObject: {fileID: 2050484264197797109, guid: caa5dd0ec685bb54fa5d8c82701abfc2, type: 3}
     spawnChance: 16
     spawnGap: 0
-  - spawnObject: {fileID: 4000010437570972, guid: dad03456549188a46b2f8a1c45fe9e10, type: 3}
+  - spawnObject: {fileID: 305026479709153044, guid: f5e30d2839633e544a70363945c1989c, type: 3}
     spawnChance: 16
     spawnGap: 0
-  - spawnObject: {fileID: 4000013324394496, guid: b26f4ceeb46828f4ca45c4964b316765, type: 3}
+  - spawnObject: {fileID: 5598667517863929809, guid: 4a5903dc18421f24d936d98abf557ce2, type: 3}
+    spawnChance: 7
+    spawnGap: 0
+  - spawnObject: {fileID: 1266181387000111549, guid: 31e041cf3c625784a9267020da9fb57d, type: 3}
+    spawnChance: 10
+    spawnGap: 0
+  - spawnObject: {fileID: 1318626840072853729, guid: 70392006566d37f49914ebf0032e2209, type: 3}
     spawnChance: 12
-    spawnGap: 0
-  - spawnObject: {fileID: 4000013324394496, guid: e16ddbc51620a444b9f397d226d53933, type: 3}
-    spawnChance: 8
-    spawnGap: 0
-  - spawnObject: {fileID: 4000013324394496, guid: 918eabf2eb4dfa74391ec36b3fad6350, type: 3}
-    spawnChance: 8
     spawnGap: 0
   - spawnObject: {fileID: 4000012708691424, guid: 987793a2cd006a94fa8413851079b654, type: 3}
     spawnChance: 1
-    spawnGap: 20
+    spawnGap: 28
+  - spawnObject: {fileID: 400000, guid: 1de793c63e4a4af44a0a9e21f7e6edea, type: 3}
+    spawnChance: 12
+    spawnGap: 0
   spawnPickups:
   - {fileID: 4000013324394496, guid: 8cfadfeb4a1e1cc4d902fb38f416d064, type: 3}
   - {fileID: 4000013324394496, guid: 2df696fd85ea5e9469478eecd7523dc5, type: 3}
-  spawnPickupRate: 25
+  spawnPickupRate: 20
   spawnGap: {x: 2, y: 4}
   startDelay: 1.5
   readyGoEffect: {fileID: 22485230, guid: 11426788c50bf454caecd76c9f6dc0d0, type: 3}
   turnButton: Fire1
   loseHealthDelay: 0.3
   score: 0
-  levelUpEveryScore: 16
+  levelUpEveryScore: 8
   levelUpSpeedIncrease: 0.4
   scoreText: {fileID: 0}
   gameCanvas: {fileID: 0}
@@ -90,8 +93,11 @@ MonoBehaviour:
   gameOverCanvas: {fileID: 0}
   isGameOver: 0
   mainMenuLevelName: CS_StartMenu
-  soundGameOver: {fileID: 0}
+  soundGameOver: {fileID: 8300000, guid: 4a3894a14c1e9234db9c0781b9cd5c60, type: 3}
   soundSourceTag: Sound
   confirmButton: Submit
   pauseButton: Cancel
   tutorialSpace: {fileID: 0}
+  metersPassed: 0
+  metersPassedIncrease: 5
+  metersPassedText: {fileID: 0}

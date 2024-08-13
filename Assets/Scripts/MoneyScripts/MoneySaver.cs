@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class MoneySaver : MonoBehaviour
 {
-    public Text endingMoneySaver;
+    public TextMeshProUGUI endingMoneySaver;
+    public Transform gameOverCanvas;
 
     public static int moneyValue;
     public bool collecting;
 
     private void Start()
     {
-        endingMoneySaver = GetComponent<Text>();
+        endingMoneySaver = GetComponent<TextMeshProUGUI>();
+        collecting = true;
 
         if(PlayerPrefs.HasKey("MoneyCollected"))
         {
@@ -24,13 +27,18 @@ public class MoneySaver : MonoBehaviour
     {
         if(collecting == true)
         {
-            moneyValue += MoneyScript.moneyCollected;
+            //moneyValue += MoneyScript.moneyCollected;
             if(ZDGGameController.instance.isGameOver == true)
             {
+                if (MoneyScript.moneyCollected > moneyValue)
+                {
+                    moneyValue = MoneyScript.moneyCollected;
+                }
                 collecting = false;
                 PlayerPrefs.SetInt("MoneyCollected", moneyValue);
             }
         }
-        endingMoneySaver.text = "Total Money: " + moneyValue;
+
+        gameOverCanvas.Find("Base/TotalMoneyPanel/TotalMoney").GetComponent<TextMeshProUGUI>().text = " " + moneyValue.ToString();
     }
 }

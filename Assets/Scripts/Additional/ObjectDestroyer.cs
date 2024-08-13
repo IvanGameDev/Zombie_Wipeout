@@ -13,8 +13,7 @@ public class ObjectDestroyer : MonoBehaviour
 
     private void OnTriggerEnter(Collider coll)
     {
-        if(coll.gameObject.tag == "Cash50")
-        {
+        if(coll.gameObject.tag == "Cash50"){
             Destroy(gameObject);
         }
     }

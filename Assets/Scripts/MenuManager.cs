@@ -14,4 +14,14 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void EnterTutorial()
+    {
+        SceneManager.LoadScene("TutorialScene");
+    }
+
+    public void ExitTutorial()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
 }

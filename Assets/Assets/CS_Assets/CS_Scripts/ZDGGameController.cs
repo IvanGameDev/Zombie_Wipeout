@@ -4,10 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using ZombieDriveGame.Types;
+using TMPro;
 
-	public class ZDGGameController : MonoBehaviour 
-	{
-    public static ZDGGameController instance;
+	public class ZDGGameController : MonoBehaviour {
+
+        public static ZDGGameController instance;
         // The camera object and the camera holder that contains it and follows the player
         internal Camera cameraObject;
         internal Transform cameraHolder;
@@ -112,6 +113,15 @@ using ZombieDriveGame.Types;
 
         [SerializeField]
         private GameObject tutorialSpace;
+        private bool isTutorial;
+
+        [SerializeField]
+        private float metersPassed;
+        [SerializeField]
+        private float metersPassedIncrease;
+
+        [SerializeField]
+        private TextMeshProUGUI metersPassedText;
 
 		//public Transform slowMotionEffect;
 
@@ -213,10 +223,17 @@ using ZombieDriveGame.Types;
         {
             yield return new WaitForSeconds(secondsToWait);
             tutorialSpace.SetActive(show);
+            isTutorial = false;
         }
 
 		void Update()
 		{
+            if(isTutorial == false){
+                MetersPassed();
+            }
+
+            //IncreaseMetersPassed();
+
 			// Delay the start of the game
 			if ( startDelay > 0 )
 			{
@@ -245,8 +262,8 @@ using ZombieDriveGame.Types;
 				else
 				{
                     // If there is a player object, move it forward and turn it in the correct direction
-                    if (playerObject)
-                    {
+                        if (playerObject)
+                        {
                         // Move the player forward
                         playerObject.transform.Translate(Vector3.forward * Time.deltaTime * playerObject.speed, Space.Self);
 
@@ -254,6 +271,7 @@ using ZombieDriveGame.Types;
                         if ( playerObject.transform.eulerAngles.y != turnDirection ) 
                         playerObject.transform.eulerAngles = Vector3.up * Mathf.LerpAngle(playerObject.transform.eulerAngles.y, turnDirection, 
                         Time.deltaTime * playerObject.turnSpeed);
+                        
                         //Vector3.RotateTowards(playerObject.transform.eulerAngles, Vector3.up * turnDirection, Time.deltaTime * playerObject.turnSpeed, 0.0F);
 
                         // If the player touches the edges of the street, bounce it back
@@ -342,7 +360,7 @@ using ZombieDriveGame.Types;
                 cameraHolder.position = new Vector3(cameraHolder.position.x, cameraHolder.position.x, playerObject.transform.position.z);
 
                 // Repeat the ground object if the player goes forward enough
-                if (groundObject && playerObject.transform.position.z > groundObject.position.z + groundRepeatDistance) groundObject.position += Vector3.forward * groundRepeatDistance;
+                //if (groundObject && playerObject.transform.position.z > groundObject.position.z + groundRepeatDistance) groundObject.position += Vector3.forward * groundRepeatDistance;
             }
         }
 
@@ -484,6 +502,22 @@ using ZombieDriveGame.Types;
                 LevelUp();
             }
         }
+
+        private void MetersPassed(){
+
+            metersPassed += Time.deltaTime * 3.5f;
+            metersPassedText.text = ((int)metersPassed).ToString() + " m";
+        }
+
+        /*void IncreaseMetersPassed()
+        {
+            if (increaseCount >= levelUpEveryScore)
+            {
+                increaseCount -= levelUpEveryScore;
+                metersPassed += Time.deltaTime * metersPassedIncrease;
+            }
+        }*/
+
 		void LevelUp()
         {
             //Increase game speed
@@ -541,7 +575,7 @@ using ZombieDriveGame.Types;
 				gameOverCanvas.gameObject.SetActive(true);
 				
 				//Write the score text
-				gameOverCanvas.Find("Base/TextScore").GetComponent<Text>().text = "Zombies Killed = " + score.ToString();
+				gameOverCanvas.Find("Base/ZombiesKilledPanel/TextScore").GetComponent<TextMeshProUGUI>().text = " " + score.ToString();
 				
 				//Check if we got a high score
 				if ( score > highScore )    
@@ -553,7 +587,7 @@ using ZombieDriveGame.Types;
 				}
 				
 				//Write the high sscore text
-				gameOverCanvas.Find("Base/TextHighScore").GetComponent<Text>().text = "Highest Killstreak = " + highScore.ToString();
+				gameOverCanvas.Find("Base/HighestKillstreakPanel/TextHighScore").GetComponent<TextMeshProUGUI>().text = " " + highScore.ToString();
 
 				//If there is a source and a sound, play it from the source
 				if ( soundSource && soundGameOver )    

@@ -7,11 +7,13 @@ TagManager:
   - Sound
   - Music
   - Cash50
+  - Trigger
+  - Destroyer
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - postprocessing
   - Water
   - UI
   - 
