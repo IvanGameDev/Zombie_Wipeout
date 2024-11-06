@@ -27,6 +27,7 @@ using System.Collections;
         public AudioSource barrelAudioSource;
         public AudioSource woodenAudioSource;
         public AudioSource pickUpAudioSource;
+        public AudioSource vehicleExplodeAudioSource;
 
         public Transform moneyEffect;
 
@@ -34,6 +35,8 @@ using System.Collections;
         {
             // Create a death effect at the position of the player
             if (deathEffect) Instantiate(deathEffect, transform.position, transform.rotation);
+
+            if(deathEffect) vehicleExplodeAudioSource.Play();
 
             // Remove the player from the game
             Destroy(gameObject);

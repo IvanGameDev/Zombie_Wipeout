@@ -6,13 +6,11 @@ public class TurnOffMusic : MonoBehaviour
 {
     public AudioSource AudioSource;
 
-    public void TurnMusicOff()
-    {
-        AudioSource.Stop();
+    public void TurnMusicOff(){
+        AudioSource.Pause();
     }
 
-    public void TurnOnMusic()
-    {
+    public void TurnOnMusic(){
         AudioSource.Play();
     }
 }

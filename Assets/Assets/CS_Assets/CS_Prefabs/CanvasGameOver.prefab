@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Highest Killstreak:'
+  m_text: Highest Killstreak;
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1fe8bf4241f854499aab48bc7e4da80, type: 2}
   m_sharedMaterial: {fileID: -1693283941995088987, guid: f1fe8bf4241f854499aab48bc7e4da80, type: 2}
