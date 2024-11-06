@@ -223,7 +223,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: d52b63d8fa56eb24bb2fa508873ff5de, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
-  m_Pitch: 0.13
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -306,6 +306,54 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!28 &387679671
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 2
+  m_Width: 256
+  m_Height: 1
+  m_CompleteImageSize: 2044
+  m_MipsStripped: 0
+  m_TextureFormat: 4
+  m_MipCount: 9
+  m_IsReadable: 1
+  m_IsPreProcessed: 0
+  m_IgnoreMipmapLimit: 0
+  m_MipmapLimitGroupName: 
+  m_StreamingMipmaps: 0
+  m_StreamingMipmapsPriority: 0
+  m_VTOnly: 0
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_LightmapFormat: 0
+  m_ColorSpace: 1
+  m_PlatformBlob: 
+  image data: 2044
+  _typelessdata: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!1001 &442371580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -362,6 +410,22 @@ PrefabInstance:
       propertyPath: AudioSource
       value: 
       objectReference: {fileID: 1834124422}
+    - target: {fileID: 114000011740398090, guid: f150c71de1c27ff4e90298b40f4062c3, type: 3}
+      propertyPath: barrelAudioSource
+      value: 
+      objectReference: {fileID: 831175972}
+    - target: {fileID: 114000011740398090, guid: f150c71de1c27ff4e90298b40f4062c3, type: 3}
+      propertyPath: pickUpAudioSource
+      value: 
+      objectReference: {fileID: 1747756490}
+    - target: {fileID: 114000011740398090, guid: f150c71de1c27ff4e90298b40f4062c3, type: 3}
+      propertyPath: woodenAudioSource
+      value: 
+      objectReference: {fileID: 1452118958}
+    - target: {fileID: 114000011740398090, guid: f150c71de1c27ff4e90298b40f4062c3, type: 3}
+      propertyPath: zombieExplodeAudioSource
+      value: 
+      objectReference: {fileID: 229700822}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -419,7 +483,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _GradientTex:
-        m_Texture: {fileID: 887226795}
+        m_Texture: {fileID: 984168394}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -609,7 +673,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 5af7722821e0f9d44a66bbc05f4e7970, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
-  m_Pitch: -0.7
+  m_Pitch: 0.95
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -692,7 +756,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!28 &887226795
+--- !u!28 &984168394
 Texture2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1072,7 +1136,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1218965087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1350,10 +1414,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasPause
       objectReference: {fileID: 0}
-    - target: {fileID: 1000010597819096, guid: c8341eae561df9e4fb127e7bccc55e2c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 224000013844256888, guid: c8341eae561df9e4fb127e7bccc55e2c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1434,10 +1494,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224000014060207108, guid: c8341eae561df9e4fb127e7bccc55e2c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 840320951439690024, guid: c8341eae561df9e4fb127e7bccc55e2c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1458,34 +1514,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1370713817}
-    - target: {fileID: 4199560822703745620, guid: c8341eae561df9e4fb127e7bccc55e2c, type: 3}
-      propertyPath: m_Type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4199560822703745620, guid: c8341eae561df9e4fb127e7bccc55e2c, type: 3}
-      propertyPath: m_Sprite
+    - target: {fileID: 4979124006415878774, guid: c8341eae561df9e4fb127e7bccc55e2c, type: 3}
+      propertyPath: AudioSource
       value: 
-      objectReference: {fileID: 21300000, guid: ddccdd794cef1574793f4f831324c81e, type: 3}
-    - target: {fileID: 4199560822703745620, guid: c8341eae561df9e4fb127e7bccc55e2c, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4199560822703745620, guid: c8341eae561df9e4fb127e7bccc55e2c, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4199560822703745620, guid: c8341eae561df9e4fb127e7bccc55e2c, type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4199560822703745620, guid: c8341eae561df9e4fb127e7bccc55e2c, type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5370582865659123287, guid: c8341eae561df9e4fb127e7bccc55e2c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1638147581}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1633,54 +1665,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1764930366902425391, guid: 77a8737bba7cc1f4b98f4a2d8fc0cbf1, type: 3}
   m_PrefabInstance: {fileID: 1856434113}
   m_PrefabAsset: {fileID: 0}
---- !u!28 &1400799903
-Texture2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_ImageContentsHash:
-    serializedVersion: 2
-    Hash: 00000000000000000000000000000000
-  m_ForcedFallbackFormat: 4
-  m_DownscaleFallback: 0
-  m_IsAlphaChannelOptional: 0
-  serializedVersion: 2
-  m_Width: 256
-  m_Height: 1
-  m_CompleteImageSize: 2044
-  m_MipsStripped: 0
-  m_TextureFormat: 4
-  m_MipCount: 9
-  m_IsReadable: 1
-  m_IsPreProcessed: 0
-  m_IgnoreMipmapLimit: 0
-  m_MipmapLimitGroupName: 
-  m_StreamingMipmaps: 0
-  m_StreamingMipmapsPriority: 0
-  m_VTOnly: 0
-  m_AlphaIsTransparency: 0
-  m_ImageCount: 1
-  m_TextureDimension: 2
-  m_TextureSettings:
-    serializedVersion: 2
-    m_FilterMode: 1
-    m_Aniso: 1
-    m_MipBias: 0
-    m_WrapU: 1
-    m_WrapV: 1
-    m_WrapW: 1
-  m_LightmapFormat: 0
-  m_ColorSpace: 1
-  m_PlatformBlob: 
-  image data: 2044
-  _typelessdata: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &1452118956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,7 +1710,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: f7f98d65e6a500a4b93c6aba26c0e120, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
-  m_Pitch: -0.91
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -1926,13 +1910,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4dffdb4ebd04d4a118a1e3c0454d0114, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.35
+  m_Volume: 0.185
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 97
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -2049,7 +2033,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _GradientTex:
-        m_Texture: {fileID: 1400799903}
+        m_Texture: {fileID: 387679671}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -2083,6 +2067,134 @@ Material:
     m_Colors:
     - _Color: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
+--- !u!1 &1747756488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1747756489}
+  - component: {fileID: 1747756490}
+  m_Layer: 0
+  m_Name: PickUp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1747756489
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747756488}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1841969551}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1747756490
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747756488}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 80d9f54684047da4fa9af1f3f073361e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.251
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: -0.01
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.16
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.979
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1834124420
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,6 +2357,7 @@ Transform:
   - {fileID: 1834124421}
   - {fileID: 1247642232}
   - {fileID: 1452118957}
+  - {fileID: 1747756489}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1856434113
@@ -2262,6 +2375,22 @@ PrefabInstance:
     - target: {fileID: 1000012076017382, guid: 77a8737bba7cc1f4b98f4a2d8fc0cbf1, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010813311148, guid: 77a8737bba7cc1f4b98f4a2d8fc0cbf1, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 4b9f53e1c95aca344906418e03d1d3bf, type: 3}
+    - target: {fileID: 114000010813311148, guid: 77a8737bba7cc1f4b98f4a2d8fc0cbf1, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010813311148, guid: 77a8737bba7cc1f4b98f4a2d8fc0cbf1, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010813311148, guid: 77a8737bba7cc1f4b98f4a2d8fc0cbf1, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114000014019972606, guid: 77a8737bba7cc1f4b98f4a2d8fc0cbf1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2347,6 +2476,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224000013978117106, guid: 77a8737bba7cc1f4b98f4a2d8fc0cbf1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 120.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013978117106, guid: 77a8737bba7cc1f4b98f4a2d8fc0cbf1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2386,10 +2523,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1274288951670900211, guid: c4410d1e23c43e043af2fa1436f3af19, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 2633377981899326462, guid: c4410d1e23c43e043af2fa1436f3af19, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2478,44 +2611,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasGameOver
       objectReference: {fileID: 0}
-    - target: {fileID: 2851869283416941282, guid: c4410d1e23c43e043af2fa1436f3af19, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2851869283416941282, guid: c4410d1e23c43e043af2fa1436f3af19, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2850898968170069317}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4410d1e23c43e043af2fa1436f3af19, type: 3}
---- !u!1 &2850898968170069316 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2851869283416941282, guid: c4410d1e23c43e043af2fa1436f3af19, type: 3}
-  m_PrefabInstance: {fileID: 2850898968170069315}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &2850898968170069317
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2850898968170069316}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6c772f869a0ffb24e8ebcd38b520fcbd, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &3655761315716406298
 PrefabInstance:
   m_ObjectHideFlags: 0

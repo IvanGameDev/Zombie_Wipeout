@@ -9,6 +9,12 @@ TagManager:
   - Cash50
   - Trigger
   - Destroyer
+  - Zombie1
+  - Zombie2
+  - Barrel
+  - WoodenObstacle
+  - PickUp
+  - PoliceZombie
   layers:
   - Default
   - TransparentFX

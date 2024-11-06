@@ -23,7 +23,10 @@ using System.Collections;
         [Tooltip("The effect that appears when this player dies")]
         public Transform deathEffect;
 
-        public AudioSource AudioSource;
+        public AudioSource zombieExplodeAudioSource;
+        public AudioSource barrelAudioSource;
+        public AudioSource woodenAudioSource;
+        public AudioSource pickUpAudioSource;
 
         public Transform moneyEffect;
 
@@ -35,4 +38,37 @@ using System.Collections;
             // Remove the player from the game
             Destroy(gameObject);
         }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Zombie1"))
+        {
+            zombieExplodeAudioSource.Play();
+        }
+
+        if (other.gameObject.CompareTag("Zombie2"))
+        {
+            zombieExplodeAudioSource.Play();
+        }
+
+        if (other.gameObject.CompareTag("Barrel"))
+        {
+            barrelAudioSource.Play();
+        }
+
+        if (other.gameObject.CompareTag("WoodenObstacle"))
+        {
+            woodenAudioSource.Play();   
+        }
+
+        if (other.gameObject.CompareTag("PickUp"))
+        {
+            pickUpAudioSource.Play();
+        }
+
+        if (other.gameObject.CompareTag("PoliceZombie"))
+        {
+            zombieExplodeAudioSource.Play();
+        }
     }
+}

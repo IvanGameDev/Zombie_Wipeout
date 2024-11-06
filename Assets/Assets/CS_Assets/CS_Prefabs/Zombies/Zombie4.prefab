@@ -2546,7 +2546,7 @@ GameObject:
   - component: {fileID: 4062658267181977327}
   m_Layer: 0
   m_Name: Zombie4
-  m_TagString: Untagged
+  m_TagString: Zombie2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

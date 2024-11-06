@@ -224,7 +224,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0675284, y: 1.0675284, z: 1.0675284}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 431362}
@@ -5184,7 +5184,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.6509434, g: 0.34082413, b: 0.34082413, a: 1}
+      maxColor: {r: 0.34901962, g: 0.08235294, b: 0.08235294, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -10620,7 +10620,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1, y: 1, z: 1}
+    m_Scale: {x: 0.79, y: 1.16, z: 0.88}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -11288,18 +11288,18 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.36862746, g: 0.21960784, b: 0.15686275, a: 1}
-        key1: {r: 0.5603379, g: 0.2776251, b: 0.21586472, a: 1}
-        key2: {r: 0.3599508, g: 0.6117647, b: 0.2, a: 0}
-        key3: {r: 1, g: 0.15104066, b: 0.042452812, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
+        key1: {r: 0.38679248, g: 0.15972863, b: 0.14048594, a: 1}
+        key2: {r: 0.34901962, g: 0.08235294, b: 0.08235294, a: 0}
+        key3: {r: 0.3599508, g: 0.6117647, b: 0.2, a: 0}
+        key4: {r: 1, g: 0.15104066, b: 0.042452812, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 31226
-        ctime2: 52043
-        ctime3: 61102
-        ctime4: 0
+        ctime1: 18890
+        ctime2: 31226
+        ctime3: 52043
+        ctime4: 61102
         ctime5: 0
         ctime6: 0
         ctime7: 0
@@ -11313,7 +11313,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_ColorSpace: 0
-        m_NumColorKeys: 4
+        m_NumColorKeys: 5
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
