@@ -51,7 +51,7 @@ namespace ZombieDriveGame
             if (soundSourceTag != string.Empty && sound)
             {
                 // Play the sound
-                GameObject.FindGameObjectWithTag(soundSourceTag).GetComponent<AudioSource>().PlayOneShot(sound);
+                //GameObject.FindGameObjectWithTag(soundSourceTag).GetComponent<AudioSource>().PlayOneShot(sound);
             }
         }
     }

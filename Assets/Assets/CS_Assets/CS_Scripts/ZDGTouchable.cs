@@ -2,10 +2,6 @@ using UnityEngine;
 
 namespace ZombieDriveGame
 {
-    /// <summary>
-    /// This script defines an object which can interact with the player in various ways. A touchable may be a rock or a railing that
-    /// bounces the player back, or it can be a zombie that the player can run over, or it can be an item that can be collected.
-    /// </summary>
     public class ZDGTouchable : MonoBehaviour
     {
         [Tooltip("The tag of the object that can touch this block")]
@@ -25,15 +21,16 @@ namespace ZombieDriveGame
 
         [Tooltip("A random rotation given to the object only on the Y axis")]
         public Vector2 rotationRange = new Vector2(0,360);
+
+        [Tooltip("Sound that plays once the player collides with it.")]
+        //public AudioSource audioSource;
         
         void Start()
         {
             transform.eulerAngles = Vector3.up * Random.Range( rotationRange.x, rotationRange.y);
+            //audioSource = GetComponent<AudioSource>();
         }
 
-        /// <summary>
-        /// Is executed when this obstacle touches another object with a trigger collider
-        /// </summary>
         /// <param name="other"><see cref="Collider"/></param>
         void OnTriggerEnter(Collider other)
         {

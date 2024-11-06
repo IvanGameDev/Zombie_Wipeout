@@ -23,6 +23,8 @@ using System.Collections;
         [Tooltip("The effect that appears when this player dies")]
         public Transform deathEffect;
 
+        public AudioSource AudioSource;
+
         public Transform moneyEffect;
 
         public void Die()

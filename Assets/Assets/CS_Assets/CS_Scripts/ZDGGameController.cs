@@ -35,7 +35,7 @@ using TMPro;
         public Transform streetEdgeEffect;
 
         [Tooltip("The sound that plays when hitting the rail")]
-        public AudioClip streetEdgeSound;
+        public AudioClip zombieExplodeSound;
 
         [Tooltip("A list of all the obstacles that can be spawned, some good and some bad")]
         public Spawn[] spawnObstacles;
@@ -214,16 +214,8 @@ using TMPro;
 			spawnGapCount = Random.Range( spawnGap.x, spawnGap.y);
 			
 			// Create the ready?GO! effect
-			if ( readyGoEffect )    Instantiate( readyGoEffect );
+			//if ( readyGoEffect )    Instantiate( readyGoEffect );
 
-            StartCoroutine(HideTutorial(tutorialSpace, 1.5f));
-        }
-
-        IEnumerator HideTutorial(GameObject tutorialSpace, float secondsToWait, bool show = false)
-        {
-            yield return new WaitForSeconds(secondsToWait);
-            tutorialSpace.SetActive(show);
-            isTutorial = false;
         }
 
 		void Update()
@@ -437,7 +429,7 @@ using TMPro;
                 }
 
                 // If there is a sound and a source, play it
-                if (soundSource && streetEdgeSound) soundSource.GetComponent<AudioSource>().PlayOneShot(streetEdgeSound);
+                //if (soundSource && streetEdgeSound) soundSource.GetComponent<AudioSource>().PlayOneShot(streetEdgeSound);
 
                 // Reset the rotation of the player
                 playerObject.transform.eulerAngles = Vector3.up;
@@ -550,9 +542,6 @@ using TMPro;
         {
             isPaused = false;
 
-            //Set timescale back to the current game speed
-            Time.timeScale = 1;
-
             //Hide the pause screen and show the game screen
             if (pauseCanvas) pauseCanvas.gameObject.SetActive(false);
             if (gameCanvas) gameCanvas.gameObject.SetActive(true);
@@ -599,14 +588,20 @@ using TMPro;
 			}
 		}
 
-		void  Restart()
+		public void  Restart()
 		{
 		    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-		}
+            isPaused = false;
+            Time.timeScale = 1.0f;
+            if (pauseCanvas) pauseCanvas.gameObject.SetActive(false);
+            if (gameCanvas) gameCanvas.gameObject.SetActive(true);
+        }
 
-		void  MainMenu()
+		public void  MainMenu()
 		{
-			SceneManager.LoadScene(mainMenuLevelName);
+			//SceneManager.LoadScene(mainMenuLevelName);
+            Time.timeScale = 1.0f;
+            isPaused = false;
 		}
 
         void OnDrawGizmos()
