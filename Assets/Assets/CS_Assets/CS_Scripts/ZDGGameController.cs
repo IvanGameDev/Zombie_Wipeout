@@ -78,6 +78,9 @@ using TMPro;
         [Tooltip("How much faster the game becomes when we level up")]
         public float levelUpSpeedIncrease = 0.1f;
 
+        [Tooltip("How much fuel you have left.")]
+        public float lowFuelIndicator;
+
         [Tooltip("The score text object which displays the current score of the player")]
         public Transform scoreText;
 		internal int highScore = 0;
@@ -113,6 +116,8 @@ using TMPro;
 
         [SerializeField]
         private GameObject tutorialSpace;
+        [SerializeField]
+        private GameObject fuelLeft;
         private bool isTutorial;
 
         [SerializeField]
@@ -137,6 +142,8 @@ using TMPro;
 
 		void Start()
 		{
+
+            playerObject.fuelLeft = playerObject.fuel;
 
             // If the camera is not assigned yet, assign it and set the camera holder too
             if (cameraObject == null)
@@ -174,8 +181,9 @@ using TMPro;
             if ( gameOverCanvas )    gameOverCanvas.gameObject.SetActive(false);
 			if ( pauseCanvas )    pauseCanvas.gameObject.SetActive(false);
 
-			//Get the highscore for the player
-			highScore = PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "HighScore", 0);
+            //Get the highscore for the player
+            //highScore = PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "HighScore", 0);
+            highScore = PlayerPrefs.GetInt("HighScore", score);
 
             // Calculate the chances for the objects to spawn
             int totalSpawns = 0;
@@ -274,6 +282,11 @@ using TMPro;
                         {
                             // Reduce from the player's fuel
                             playerObject.fuel -= Time.deltaTime * playerObject.speed * 0.2f;
+                            playerObject.fuelLeft -= Time.deltaTime * playerObject.speed * 0.2f;
+                            if( playerObject.fuelLeft <= lowFuelIndicator)
+                            {
+                                fuelLeft.SetActive(true);
+                            }
 
                             // Update the timer
                             UpdateFuel();
@@ -350,9 +363,6 @@ using TMPro;
             {
                 // Make the camera holder follow the position of the player along the street
                 cameraHolder.position = new Vector3(cameraHolder.position.x, cameraHolder.position.x, playerObject.transform.position.z);
-
-                // Repeat the ground object if the player goes forward enough
-                //if (groundObject && playerObject.transform.position.z > groundObject.position.z + groundRepeatDistance) groundObject.position += Vector3.forward * groundRepeatDistance;
             }
         }
 
@@ -366,6 +376,8 @@ using TMPro;
                 // Time's up!
                 if ( playerObject.fuel <= 0 )
                 {
+                    //playerObject.speed -= Time.deltaTime * 1.5f;
+                    StartCoroutine(SlowDownTime());
                     StartCoroutine(GameOver(0));
                 }
             }
@@ -376,9 +388,12 @@ using TMPro;
         {
             // Change the value of the fuel
             playerObject.fuel += changeValue;
+            playerObject.fuelLeft += changeValue;
 
             // Limit the value of the fuel to the maximum allowed value
             if (playerObject.fuel > playerObject.fuelMax) playerObject.fuel = playerObject.fuelMax;
+            if (playerObject.fuelLeft > playerObject.fuelMax) playerObject.fuelLeft = playerObject.fuelMax;
+            fuelLeft.SetActive(false);
 
             // Play the animation of the fuel icon
             if (fuelCanvas && fuelCanvas.GetComponent<Animation>()) fuelCanvas.GetComponent<Animation>().Play();
@@ -451,7 +466,8 @@ using TMPro;
                 {
                     playerObject.Die();
 
-                    // Health reached 0, so the target should die
+                // Health reached 0, so the target should die
+                    StartCoroutine(SlowDownTime());
                     StartCoroutine(GameOver(1));
                 }
 
@@ -501,15 +517,6 @@ using TMPro;
             metersPassedText.text = ((int)metersPassed).ToString() + " m";
         }
 
-        /*void IncreaseMetersPassed()
-        {
-            if (increaseCount >= levelUpEveryScore)
-            {
-                increaseCount -= levelUpEveryScore;
-                metersPassed += Time.deltaTime * metersPassedIncrease;
-            }
-        }*/
-
 		void LevelUp()
         {
             //Increase game speed
@@ -550,8 +557,6 @@ using TMPro;
         IEnumerator GameOver(float delay)
 		{
 			isGameOver = true;
-
-			yield return new WaitForSeconds(delay);
 			
 			//Remove the pause and game screens
 			if ( pauseCanvas )    pauseCanvas.gameObject.SetActive(false);
@@ -560,6 +565,8 @@ using TMPro;
             //Show the game over screen
             if ( gameOverCanvas )    
 			{
+
+                yield return new WaitForSeconds(1f);
 				//Show the game over screen
 				gameOverCanvas.gameObject.SetActive(true);
 				
@@ -570,13 +577,14 @@ using TMPro;
 				if ( score > highScore )    
 				{
 					highScore = score;
-					
-					//Register the new high score
-					PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "HighScore", score);
-				}
-				
-				//Write the high sscore text
-				gameOverCanvas.Find("Base/HighestKillstreakPanel/TextHighScore").GetComponent<TextMeshProUGUI>().text = " " + highScore.ToString();
+
+                //Register the new high score
+                //PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "HighScore", score);
+                PlayerPrefs.SetInt("HighScore", score);
+            }
+
+            //Write the high sscore text
+            gameOverCanvas.Find("Base/HighestKillstreakPanel/TextHighScore").GetComponent<TextMeshProUGUI>().text = " " + highScore.ToString();
 
 				//If there is a source and a sound, play it from the source
 				if ( soundSource && soundGameOver )    
@@ -588,7 +596,28 @@ using TMPro;
 			}
 		}
 
-		public void  Restart()
+        IEnumerator SlowDownTime()
+        {
+            while (Time.timeScale > 0.2f)
+            {
+                Time.timeScale -= Time.deltaTime * 2;
+
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(0.5f);
+
+            while (Time.timeScale <= 1.0f)
+            {
+                Time.timeScale += Time.deltaTime;
+
+                yield return null;
+            }
+
+                Time.timeScale = 1.0f;
+        }
+
+        public void  Restart()
 		{
 		    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             isPaused = false;

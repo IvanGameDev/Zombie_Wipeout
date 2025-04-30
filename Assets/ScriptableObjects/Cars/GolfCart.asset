@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca50872c9ac4814d91fbb8703e42602, type: 3}
+  m_Name: GolfCart
+  m_EditorClassIdentifier: 
+  carName: OralanSeks
+  carDescription: Je
+  carPrice: 22000
+  durability: 25
+  fuel: 80
+  carModel: {fileID: 1170052622600160, guid: 2c197f9e9c22d52449cb461925a5876a, type: 3}

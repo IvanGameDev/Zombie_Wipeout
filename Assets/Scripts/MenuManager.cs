@@ -6,6 +6,11 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
 
+    public void LoadLevel(int level)
+    {
+        SceneManager.LoadScene(level);
+    }
+
     public void EnterShop()
     {
         SceneManager.LoadScene("ShopScene");

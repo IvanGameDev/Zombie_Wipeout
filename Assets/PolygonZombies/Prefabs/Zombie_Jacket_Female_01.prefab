@@ -4154,7 +4154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   touchTargetTag: Player
   touchFunction: ChangeScore
-  functionParameter: 0
+  functionParameter: 1
   functionTarget: GameController
   touchEffect: {fileID: 431362, guid: 810c1e589210e264197fc234c432426a, type: 3}
   rotationRange: {x: 150, y: 220}

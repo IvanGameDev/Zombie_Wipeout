@@ -9,6 +9,7 @@ public class TurnOffSound : MonoBehaviour
     public AudioSource vehicleExplode;
     public AudioSource barrellExplode;
     public AudioSource pickUp;
+    public AudioSource buttonSounds;
 
     public void TurnSoundOff()
     {
@@ -17,6 +18,7 @@ public class TurnOffSound : MonoBehaviour
         woodenObstacle.enabled = false;
         zombieExplode.enabled = false;
         pickUp.enabled = false;
+        buttonSounds.enabled = false;
     }
 
     public void TurnSoundOn()
@@ -26,5 +28,6 @@ public class TurnOffSound : MonoBehaviour
         woodenObstacle.enabled = true;
         zombieExplode.enabled = true; 
         pickUp.enabled = true;
+        buttonSounds.enabled = true;
     }
 }

@@ -12,6 +12,6 @@ public class GrandSection : MonoBehaviour
 
     private void OnTriggerExit(Collider other){
         grandSectionSpawner.SpawnSection();
-        Destroy(gameObject, 2);
+        Destroy(gameObject, 1);
     }
 }

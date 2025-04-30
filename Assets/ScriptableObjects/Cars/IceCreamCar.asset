@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca50872c9ac4814d91fbb8703e42602, type: 3}
+  m_Name: IceCreamCar
+  m_EditorClassIdentifier: 
+  carName: Vaginilica
+  carDescription: Duboka
+  carPrice: 8850
+  durability: 55
+  fuel: 40
+  carModel: {fileID: 1319633399095954, guid: d26edc8297d193f43a6116dca7d7c722, type: 3}

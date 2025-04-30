@@ -9,6 +9,7 @@ using System.Collections;
 
         [Tooltip("The fuel of the player. If this reaches 0, the game ends")]
         public float fuel = 100;
+        public float fuelLeft;
         internal float fuelMax;
 
         [Tooltip("The speed of the player, how fast it moves player")]

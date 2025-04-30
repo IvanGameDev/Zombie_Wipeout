@@ -84,7 +84,7 @@ MonoBehaviour:
   - {fileID: 54000011331522284}
   - {fileID: 54000010552816898}
   - {fileID: 54000010030901024}
-  explodePower: 100
+  explodePower: 175
 --- !u!1 &1000010099988912
 GameObject:
   m_ObjectHideFlags: 0

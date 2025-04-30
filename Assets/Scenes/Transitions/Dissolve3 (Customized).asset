@@ -49,7 +49,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   gradientMode: 0
   shapeTexture: {fileID: 2800000, guid: 2873235459d4547b58d76a16bc824b5a, type: 3}
-  duration: 2.5
+  duration: 1.5
   noiseIntensity: 0
   vignetteIntensity: 0
   toonGradientIntensity: 1
