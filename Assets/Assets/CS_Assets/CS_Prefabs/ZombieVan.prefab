@@ -5634,10 +5634,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 522cc113eaa8909488b0e3ece3f8fd9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  admobReward: {fileID: 0}
   health: 100
   fuel: 100
+  fuelLeft: 100
   speed: 10
-  turnSpeed: 2.85
+  turnSpeed: 2.8
   turnRange: 30
   deathEffect: {fileID: 4000012626389198, guid: 5eb372ab6fae0714ba3aa66e394992df, type: 3}
   zombieExplodeAudioSource: {fileID: 0}
@@ -6297,14 +6299,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1665187737447004, guid: f65170bd5d5614c42a091c24c0f8104c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7740961909878564643}
+      addedObject: {fileID: 6503533958056268674}
   m_SourcePrefab: {fileID: 100100000, guid: f65170bd5d5614c42a091c24c0f8104c, type: 3}
 --- !u!1 &2794169189532158743 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1665187737447004, guid: f65170bd5d5614c42a091c24c0f8104c, type: 3}
   m_PrefabInstance: {fileID: 2793085438212235595}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &7740961909878564643
+--- !u!95 &6503533958056268674
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0

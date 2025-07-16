@@ -7,14 +7,22 @@ using GoogleMobileAds.Api;
 
 public class RewardedAdmob : MonoBehaviour
 {
-    ZDGPlayer player;
+    public ZDGPlayer player;
 
     public string rewardedID = "";
+    public bool isAdOpened;
+    public bool isRewardGiven;
 
     private RewardedAd _rewardedAd;
 
+    [SerializeField]
+    private GameObject infiniteFuelButtonAd;
+
     public void Start()
     {
+        isAdOpened = false;
+        isRewardGiven = false;
+        infiniteFuelButtonAd.SetActive(true);
         // Initialize the Google Mobile Ads SDK.
         MobileAds.Initialize((InitializationStatus initStatus) =>
         {
@@ -66,12 +74,16 @@ public class RewardedAdmob : MonoBehaviour
         {
             _rewardedAd.Show((Reward reward) =>
             {
+                if (isAdOpened == true && isRewardGiven == true)
+                {
+                    player.fuelLeft += 200000000;
+                    player.health = 75;
+                }
                 // TODO: Reward the user.
                 Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
 
             });
         }
-        Destroy(gameObject);
     }
 
     private void RegisterEventHandlers(RewardedAd ad)
@@ -87,7 +99,9 @@ public class RewardedAdmob : MonoBehaviour
         ad.OnAdImpressionRecorded += () =>
         {
             Debug.Log("Rewarded ad recorded an impression.");
-            player.fuel = 200000;
+            isAdOpened = true;
+            isRewardGiven = true;
+            Debug.Log("Rewarded.");
             // here goes the reward
         };
         // Raised when a click is recorded for an ad.
@@ -104,6 +118,8 @@ public class RewardedAdmob : MonoBehaviour
         ad.OnAdFullScreenContentClosed += () =>
         {
             Debug.Log("Rewarded ad full screen content closed.");
+            isAdOpened = false;
+            isRewardGiven = true;
             LoadRewardedAd();
         };
         // Raised when the ad failed to open full screen content.
@@ -113,6 +129,29 @@ public class RewardedAdmob : MonoBehaviour
                            "with error : " + error);
             LoadRewardedAd();
         };
+
+        //_rewardedAd.Destroy();
     }
+
+    /*private void RegisterReloadHandler(RewardedAd ad)
+    {
+        // Raised when the ad closed full screen content.
+        ad.OnAdFullScreenContentClosed += () =>
+        {
+            Debug.Log("Rewarded Ad full screen content closed.");
+
+            // Reload the ad so that we can show another as soon as possible.
+            LoadRewardedAd();
+        };
+        // Raised when the ad failed to open full screen content.
+        ad.OnAdFullScreenContentFailed += (AdError error) =>
+        {
+            Debug.LogError("Rewarded ad failed to open full screen content " +
+                           "with error : " + error);
+
+            // Reload the ad so that we can show another as soon as possible.
+            LoadRewardedAd();
+        };
+    }*/
 
 }

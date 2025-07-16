@@ -3,6 +3,8 @@ using System.Collections;
 
     public class ZDGPlayer : MonoBehaviour
     {
+        public RewardedAdmob admobReward;
+        
         [Tooltip("The health of the player. If this reaches 0, the player dies")]
         public float health = 100;
         internal float healthMax;
@@ -40,8 +42,16 @@ using System.Collections;
             if(deathEffect) vehicleExplodeAudioSource.Play();
 
             // Remove the player from the game
-            Destroy(gameObject);
-        }
+            //Destroy(gameObject);
+            /*if (admobReward.isAdOpened == true)
+            {
+                fuelLeft += 200000000;
+            }*/
+            /*else
+            {
+                fuelLeft = fuel;
+            }*/
+    }
 
     private void OnTriggerEnter(Collider other)
     {

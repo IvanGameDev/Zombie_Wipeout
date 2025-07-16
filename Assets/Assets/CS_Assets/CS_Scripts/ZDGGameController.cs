@@ -9,6 +9,8 @@ using TMPro;
 	public class ZDGGameController : MonoBehaviour {
 
         public static ZDGGameController instance;
+        RewardedAdmob admob;
+        ResumeCounter counter;
         // The camera object and the camera holder that contains it and follows the player
         internal Camera cameraObject;
         internal Transform cameraHolder;
@@ -556,16 +558,15 @@ using TMPro;
 
         IEnumerator GameOver(float delay)
 		{
-			isGameOver = true;
-			
-			//Remove the pause and game screens
-			if ( pauseCanvas )    pauseCanvas.gameObject.SetActive(false);
+			isGameOver = true; 
+
+            //Remove the pause and game screens
+            if ( pauseCanvas )    pauseCanvas.gameObject.SetActive(false);
             if ( gameCanvas )    gameCanvas.gameObject.SetActive(false);
 
             //Show the game over screen
             if ( gameOverCanvas )    
 			{
-
                 yield return new WaitForSeconds(1f);
 				//Show the game over screen
 				gameOverCanvas.gameObject.SetActive(true);
@@ -583,8 +584,8 @@ using TMPro;
                 PlayerPrefs.SetInt("HighScore", score);
             }
 
-            //Write the high sscore text
-            gameOverCanvas.Find("Base/HighestKillstreakPanel/TextHighScore").GetComponent<TextMeshProUGUI>().text = " " + highScore.ToString();
+                //Write the high sscore text
+                gameOverCanvas.Find("Base/HighestKillstreakPanel/TextHighScore").GetComponent<TextMeshProUGUI>().text = " " + highScore.ToString();
 
 				//If there is a source and a sound, play it from the source
 				if ( soundSource && soundGameOver )    
@@ -594,18 +595,18 @@ using TMPro;
 					soundSource.GetComponent<AudioSource>().PlayOneShot(soundGameOver);
 				}
 			}
-		}
+        }
 
         IEnumerator SlowDownTime()
         {
             while (Time.timeScale > 0.2f)
             {
-                Time.timeScale -= Time.deltaTime * 2;
+                Time.timeScale -= Time.deltaTime * 1.75f;
 
                 yield return null;
             }
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.4f);
 
             while (Time.timeScale <= 1.0f)
             {
@@ -617,6 +618,17 @@ using TMPro;
                 Time.timeScale = 1.0f;
         }
 
+        /*public void InfiniteFuelRewardAd()
+        {
+            if (admob.isRewardGiven == true)
+            {
+                pauseCanvas.gameObject.SetActive(false);
+                gameOverCanvas.gameObject.SetActive(false);
+                counter.ResumeGame();
+                isGameOver = false;
+            }
+        }*/
+
         public void  Restart()
 		{
 		    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -626,7 +638,7 @@ using TMPro;
             if (gameCanvas) gameCanvas.gameObject.SetActive(true);
         }
 
-		public void  MainMenu()
+        public void  MainMenu()
 		{
 			//SceneManager.LoadScene(mainMenuLevelName);
             Time.timeScale = 1.0f;
