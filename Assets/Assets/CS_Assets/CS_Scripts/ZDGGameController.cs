@@ -123,8 +123,8 @@ using TMPro;
         private GameObject fuelLeft;
         [SerializeField]
         private GameObject infiniteFuelButton;
-        [SerializeField]
-        private GameObject infiniteDurabilityButton;
+        /*[SerializeField]
+        private GameObject infiniteDurabilityButton;*/
 
       private bool isTutorial;
 
@@ -648,22 +648,22 @@ using TMPro;
 
         private void CheckForDeath()
         {
-            if (deathCounter % 2 == 0)
+            /*if (deathCounter % 5 == 0)
             {
                 infiniteFuelButton.gameObject.SetActive(true);
             } else
             {
                 infiniteFuelButton.gameObject.SetActive(false);
-            }
+            }*/
 
-            if (deathCounter % 4 == 0)
+            /*if (deathCounter % 4 == 0)
             {
                 infiniteDurabilityButton.gameObject.SetActive(true);
             }
             else
             {
                 infiniteDurabilityButton.gameObject.SetActive(false);
-            }
+            }*/
     }
 
         void OnDrawGizmos()

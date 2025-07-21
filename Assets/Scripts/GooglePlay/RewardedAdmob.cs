@@ -10,7 +10,7 @@ public class RewardedAdmob : MonoBehaviour
     public ZDGPlayer player;
     public ZDGGameController gameController;
 
-    public string rewardedID = "ca-app-pub-6407977146674270/2030928627";
+    public string rewardedID = "ca-app-pub-3940256099942544/5224354917";
     public bool isAdOpened;
     public bool isRewardGiven;
     public bool isAdClosed;
@@ -19,6 +19,11 @@ public class RewardedAdmob : MonoBehaviour
 
     [SerializeField]
     private GameObject timerForResume;
+
+    private void Awake()
+    {
+        MobileAds.RaiseAdEventsOnUnityMainThread = true;
+    }
 
     public void Start()
     {
@@ -78,15 +83,36 @@ public class RewardedAdmob : MonoBehaviour
             {
                 if (isAdOpened == true && isRewardGiven == true && gameController.isGameOver == true)
                 {
-                    player.fuel += 200000000;
+                    player.fuel += 2000000000;
                     player.health += 75;
                 }
                 // TODO: Reward the user.
                 Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
-
+                //RegisterReloadHandler(_rewardedAd);
             });
         }
     }
+
+    /*private void RegisterReloadHandler(RewardedAd ad)
+    {
+        // Raised when the ad closed full screen content.
+        ad.OnAdFullScreenContentClosed += () =>
+        {
+            Debug.Log("Rewarded Ad full screen content closed.");
+
+            // Reload the ad so that we can show another as soon as possible.
+            LoadRewardedAd();
+        };
+        // Raised when the ad failed to open full screen content.
+        ad.OnAdFullScreenContentFailed += (AdError error) =>
+        {
+            Debug.LogError("Rewarded ad failed to open full screen content " +
+                           "with error : " + error);
+
+            // Reload the ad so that we can show another as soon as possible.
+            LoadRewardedAd();
+        };
+    }*/
 
     private void RegisterEventHandlers(RewardedAd ad)
     {
@@ -137,8 +163,6 @@ public class RewardedAdmob : MonoBehaviour
                                "with error : " + error);
                 LoadRewardedAd();
             };
-
-            //_rewardedAd.Destroy();
         };
 
     }

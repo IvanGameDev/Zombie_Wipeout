@@ -6,7 +6,7 @@ using UnityEngine;
 using GoogleMobileAds;
 public class DurabilityRewardAd : MonoBehaviour
 {
-    public ZDGPlayer player;
+    /*public ZDGPlayer player;
     public ZDGGameController gameController;
 
     public string rewardedID = "ca-app-pub-6407977146674270/3005083031";
@@ -159,5 +159,5 @@ public class DurabilityRewardAd : MonoBehaviour
         }
 
         yield return null;
-    }
+    }*/
 }
