@@ -44,13 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ac427ad4dcd9449a8ad70afc6f97fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathCounter: 0
   playerObject: {fileID: 0}
   groundObject: {fileID: 0}
   groundRepeatDistance: 20
   streetEdge: 4.2
   streetEdgeDamage: 8
   streetEdgeEffect: {fileID: 0}
-  streetEdgeSound: {fileID: 8300000, guid: 0d2e5bbaf40a20544b400c0415a531a2, type: 3}
+  zombieExplodeSound: {fileID: 0}
   spawnObstacles:
   - spawnObject: {fileID: 305026479709153044, guid: f5e30d2839633e544a70363945c1989c, type: 3}
     spawnChance: 14
@@ -76,15 +77,16 @@ MonoBehaviour:
   spawnPickups:
   - {fileID: 4000013324394496, guid: 8cfadfeb4a1e1cc4d902fb38f416d064, type: 3}
   - {fileID: 4000013324394496, guid: 2df696fd85ea5e9469478eecd7523dc5, type: 3}
-  spawnPickupRate: 20
+  spawnPickupRate: 22
   spawnGap: {x: 2, y: 4}
-  startDelay: 2
+  startDelay: 1.5
   readyGoEffect: {fileID: 22485230, guid: 11426788c50bf454caecd76c9f6dc0d0, type: 3}
   turnButton: Fire1
   loseHealthDelay: 0.3
   score: 0
   levelUpEveryScore: 8
   levelUpSpeedIncrease: 0.5
+  lowFuelIndicator: 20
   scoreText: {fileID: 0}
   gameCanvas: {fileID: 0}
   healthCanvas: {fileID: 0}
@@ -98,6 +100,9 @@ MonoBehaviour:
   confirmButton: Submit
   pauseButton: Cancel
   tutorialSpace: {fileID: 0}
+  fuelLeft: {fileID: 0}
+  infiniteFuelButton: {fileID: 0}
+  infiniteDurabilityButton: {fileID: 0}
   metersPassed: 0
   metersPassedIncrease: 5
   metersPassedText: {fileID: 0}

@@ -1,16 +1,15 @@
+using GoogleMobileAds.Api;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System;
+using UnityEngine;
 using GoogleMobileAds;
-using GoogleMobileAds.Api;
-
-public class RewardedAdmob : MonoBehaviour
+public class DurabilityRewardAd : MonoBehaviour
 {
     public ZDGPlayer player;
     public ZDGGameController gameController;
 
-    public string rewardedID = "ca-app-pub-6407977146674270/2030928627";
+    public string rewardedID = "ca-app-pub-6407977146674270/3005083031";
     public bool isAdOpened;
     public bool isRewardGiven;
     public bool isAdClosed;
@@ -78,8 +77,8 @@ public class RewardedAdmob : MonoBehaviour
             {
                 if (isAdOpened == true && isRewardGiven == true && gameController.isGameOver == true)
                 {
-                    player.fuel += 200000000;
-                    player.health += 75;
+                    player.fuel += 75;
+                    player.health += 200000000;
                 }
                 // TODO: Reward the user.
                 Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
@@ -129,7 +128,8 @@ public class RewardedAdmob : MonoBehaviour
                 gameController.gameCanvas.gameObject.SetActive(true);
                 StartCoroutine(RewardAdInformationWindow(0));
                 LoadRewardedAd();
-            };
+            }
+            ;
             // Raised when the ad failed to open full screen content.
             ad.OnAdFullScreenContentFailed += (AdError error) =>
             {

@@ -7,6 +7,7 @@ using System.Collections;
         
         [Tooltip("The health of the player. If this reaches 0, the player dies")]
         public float health = 100;
+        public float healthLeft;
         internal float healthMax;
 
         [Tooltip("The fuel of the player. If this reaches 0, the game ends")]
@@ -43,14 +44,6 @@ using System.Collections;
 
             // Remove the player from the game
             //Destroy(gameObject);
-            /*if (admobReward.isAdOpened == true)
-            {
-                fuelLeft += 200000000;
-            }*/
-            /*else
-            {
-                fuelLeft = fuel;
-            }*/
     }
 
     private void OnTriggerEnter(Collider other)

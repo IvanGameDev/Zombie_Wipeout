@@ -9,11 +9,12 @@ using TMPro;
 	public class ZDGGameController : MonoBehaviour {
 
         public static ZDGGameController instance;
-        RewardedAdmob admob;
-        ResumeCounter counter;
         // The camera object and the camera holder that contains it and follows the player
         internal Camera cameraObject;
         internal Transform cameraHolder;
+
+        [Tooltip("Death counter")]
+        public int deathCounter;
 
         [Tooltip("The player object assigned from the scene")]
         public ZDGPlayer playerObject;
@@ -120,7 +121,12 @@ using TMPro;
         private GameObject tutorialSpace;
         [SerializeField]
         private GameObject fuelLeft;
-        private bool isTutorial;
+        [SerializeField]
+        private GameObject infiniteFuelButton;
+        [SerializeField]
+        private GameObject infiniteDurabilityButton;
+
+      private bool isTutorial;
 
         [SerializeField]
         private float metersPassed;
@@ -144,8 +150,8 @@ using TMPro;
 
 		void Start()
 		{
-
             playerObject.fuelLeft = playerObject.fuel;
+            playerObject.healthLeft = playerObject.health;
 
             // If the camera is not assigned yet, assign it and set the camera holder too
             if (cameraObject == null)
@@ -186,6 +192,8 @@ using TMPro;
             //Get the highscore for the player
             //highScore = PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "HighScore", 0);
             highScore = PlayerPrefs.GetInt("HighScore", score);
+
+            deathCounter = PlayerPrefs.GetInt("DeathCounter", deathCounter);
 
             // Calculate the chances for the objects to spawn
             int totalSpawns = 0;
@@ -558,7 +566,8 @@ using TMPro;
 
         IEnumerator GameOver(float delay)
 		{
-			isGameOver = true; 
+			isGameOver = true;
+            deathCounter += 1;
 
             //Remove the pause and game screens
             if ( pauseCanvas )    pauseCanvas.gameObject.SetActive(false);
@@ -570,6 +579,8 @@ using TMPro;
                 yield return new WaitForSeconds(1f);
 				//Show the game over screen
 				gameOverCanvas.gameObject.SetActive(true);
+
+                CheckForDeath();
 				
 				//Write the score text
 				gameOverCanvas.Find("Base/ZombiesKilledPanel/TextScore").GetComponent<TextMeshProUGUI>().text = " " + score.ToString();
@@ -582,8 +593,9 @@ using TMPro;
                 //Register the new high score
                 //PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "HighScore", score);
                 PlayerPrefs.SetInt("HighScore", score);
-            }
+                }
 
+                PlayerPrefs.SetInt("DeathCounter", deathCounter);
                 //Write the high sscore text
                 gameOverCanvas.Find("Base/HighestKillstreakPanel/TextHighScore").GetComponent<TextMeshProUGUI>().text = " " + highScore.ToString();
 
@@ -618,17 +630,6 @@ using TMPro;
                 Time.timeScale = 1.0f;
         }
 
-        /*public void InfiniteFuelRewardAd()
-        {
-            if (admob.isRewardGiven == true)
-            {
-                pauseCanvas.gameObject.SetActive(false);
-                gameOverCanvas.gameObject.SetActive(false);
-                counter.ResumeGame();
-                isGameOver = false;
-            }
-        }*/
-
         public void  Restart()
 		{
 		    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -644,6 +645,26 @@ using TMPro;
             Time.timeScale = 1.0f;
             isPaused = false;
 		}
+
+        private void CheckForDeath()
+        {
+            if (deathCounter % 2 == 0)
+            {
+                infiniteFuelButton.gameObject.SetActive(true);
+            } else
+            {
+                infiniteFuelButton.gameObject.SetActive(false);
+            }
+
+            if (deathCounter % 4 == 0)
+            {
+                infiniteDurabilityButton.gameObject.SetActive(true);
+            }
+            else
+            {
+                infiniteDurabilityButton.gameObject.SetActive(false);
+            }
+    }
 
         void OnDrawGizmos()
         {
