@@ -237,7 +237,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000010797160448}
   serializedVersion: 8
-  lengthInSec: 0.6
+  lengthInSec: 0.8
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 1
@@ -382,8 +382,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 0.6037736, g: 0.24207903, b: 0.24207903, a: 0.5882353}
-      maxColor: {r: 0.3490566, g: 0.08067818, b: 0.08067818, a: 0.5882353}
+      minColor: {r: 0.4245283, g: 0.122152, b: 0.122152, a: 0.60784316}
+      maxColor: {r: 0.3490566, g: 0.08067818, b: 0.08067818, a: 0.7058824}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5038,7 +5038,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000010966059306}
   serializedVersion: 8
-  lengthInSec: 1
+  lengthInSec: 1.25
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 1
@@ -5248,8 +5248,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.125
-      minScalar: 0.05
+      scalar: 0.15
+      minScalar: 0.15
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -10061,7 +10061,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000013514282170}
   serializedVersion: 8
-  lengthInSec: 0.5
+  lengthInSec: 0.6
   simulationSpeed: 0.55
   stopAction: 0
   cullingMode: 1
@@ -10271,8 +10271,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.4
-      minScalar: 0.18
+      scalar: 0.45
+      minScalar: 0.2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -11288,10 +11288,10 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.36862746, g: 0.21960784, b: 0.15686275, a: 1}
-        key1: {r: 0.38679248, g: 0.15972863, b: 0.14048594, a: 1}
+        key1: {r: 0.41509432, g: 0.03294399, b: 0, a: 1}
         key2: {r: 0.34901962, g: 0.08235294, b: 0.08235294, a: 0}
-        key3: {r: 0.3599508, g: 0.6117647, b: 0.2, a: 0}
-        key4: {r: 1, g: 0.15104066, b: 0.042452812, a: 0}
+        key3: {r: 0.1961722, g: 0.3773585, b: 0.080099694, a: 0}
+        key4: {r: 0.7169812, g: 0.08227652, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}

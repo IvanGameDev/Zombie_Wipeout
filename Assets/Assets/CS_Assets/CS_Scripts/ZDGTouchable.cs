@@ -4,6 +4,8 @@ namespace ZombieDriveGame
 {
     public class ZDGTouchable : MonoBehaviour
     {
+        public static ZDGTouchable Instance;
+
         [Tooltip("The tag of the object that can touch this block")]
         public string touchTargetTag = "Player";
 
@@ -11,7 +13,7 @@ namespace ZombieDriveGame
         public string touchFunction = "ChangeScore";
 
         [Tooltip("The parameter that will be passed with the function")]
-        public float functionParameter = 100;
+        public float functionParameter;
 
         [Tooltip("The target object that the function will play from")]
         public string functionTarget = "GameController";
@@ -23,8 +25,14 @@ namespace ZombieDriveGame
         public Vector2 rotationRange = new Vector2(0,360);
 
         [Tooltip("Sound that plays once the player collides with it.")]
-        //public AudioSource audioSource;
-        
+
+        private void Awake()
+        {
+            if (Instance == null) { 
+                Instance = this;
+            }
+        }
+
         void Start()
         {
             transform.eulerAngles = Vector3.up * Random.Range( rotationRange.x, rotationRange.y);

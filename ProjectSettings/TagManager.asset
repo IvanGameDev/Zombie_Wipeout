@@ -15,6 +15,7 @@ TagManager:
   - WoodenObstacle
   - PickUp
   - PoliceZombie
+  - FuelPickUp
   layers:
   - Default
   - TransparentFX

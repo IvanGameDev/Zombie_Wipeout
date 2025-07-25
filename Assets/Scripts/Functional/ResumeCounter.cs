@@ -6,6 +6,7 @@ using TMPro;
 public class ResumeCounter : MonoBehaviour
 {
     public ResumeCounter instance;
+    public ZDGGameController controller;
 
     private void Awake()
     {
@@ -18,5 +19,17 @@ public class ResumeCounter : MonoBehaviour
     public void ResumeGame()
     {
         Time.timeScale = 1f; 
+    }
+
+    public void ShowFuelAd()
+    {
+        if(controller.deathCounter % 2 == 0)
+        {
+            controller.infiniteFuelButton.gameObject.SetActive(true);
+        }
+        else
+        {
+            controller.infiniteFuelButton.gameObject.SetActive(false);
+        }
     }
 }

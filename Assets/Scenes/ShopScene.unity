@@ -235,7 +235,6 @@ GameObject:
   m_Component:
   - component: {fileID: 384338834}
   - component: {fileID: 384338836}
-  - component: {fileID: 384338837}
   m_Layer: 0
   m_Name: CarSelection
   m_TagString: Untagged
@@ -279,20 +278,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a05a0631ac3830545bbb6fc35e726e73, type: 2}
   - {fileID: 11400000, guid: 244abb909d4857c4cac5e7bbc4865b30, type: 2}
   carDisplay: {fileID: 1910159232}
---- !u!114 &384338837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384338833}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b51869a055e430a4c9de2eaea66b530b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  finalPosition: {x: 0.27, y: -0.56, z: 2.35}
-  initialPosition: {x: 0, y: 0, z: 0}
+  mapDisplay: {fileID: 0}
 --- !u!1 &739928461
 GameObject:
   m_ObjectHideFlags: 0

@@ -134,7 +134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   touchTargetTag: Player
   touchFunction: ChangeHealth
-  functionParameter: 50
+  functionParameter: 60
   functionTarget: GameController
   touchEffect: {fileID: 4000011206083338, guid: 416f114f192a6d54bb16d7f0957b2826, type: 3}
   rotationRange: {x: 0, y: 0}
@@ -157,7 +157,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114000011278259862
 MonoBehaviour:

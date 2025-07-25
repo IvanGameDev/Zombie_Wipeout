@@ -102,7 +102,7 @@ MonoBehaviour:
   touchFunction: ChangeHealth
   functionParameter: -10
   functionTarget: GameController
-  touchEffect: {fileID: 6991376817836408598, guid: 2fa27798bf7551442aabec4ff4787861, type: 3}
+  touchEffect: {fileID: 481794, guid: 6175a6bf46a298a44ad83caa30bac5e2, type: 3}
   rotationRange: {x: 0, y: 360}
 --- !u!136 &1894525999497910479
 CapsuleCollider:

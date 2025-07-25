@@ -102,7 +102,6 @@ MonoBehaviour:
   tutorialSpace: {fileID: 0}
   fuelLeft: {fileID: 0}
   infiniteFuelButton: {fileID: 0}
-  infiniteDurabilityButton: {fileID: 0}
   metersPassed: 0
   metersPassedIncrease: 5
   metersPassedText: {fileID: 0}

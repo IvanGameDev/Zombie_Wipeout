@@ -5,10 +5,12 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using ZombieDriveGame.Types;
 using TMPro;
+using System.Collections.Generic;
 
-	public class ZDGGameController : MonoBehaviour {
+public class ZDGGameController : MonoBehaviour {
 
         public static ZDGGameController instance;
+        public static RewardedAdmob admob;
         // The camera object and the camera holder that contains it and follows the player
         internal Camera cameraObject;
         internal Transform cameraHolder;
@@ -18,6 +20,8 @@ using TMPro;
 
         [Tooltip("The player object assigned from the scene")]
         public ZDGPlayer playerObject;
+        public TurnOffMusic turnOffMusic;
+        public TurnOffSound turnOffSound;
 
         // The turning direction of the player
         internal float turnDirection = 0;
@@ -45,7 +49,7 @@ using TMPro;
         internal Spawn[] spawnObstaclesList;
 
         [Tooltip("A list of all items you can pick up, which appear only at a certain rate")]
-        public Transform[] spawnPickups;
+        public List<Transform> spawnPickups;
 
         [Tooltip("The rate at which a pickup appear. For example if set to 50, we will create 50 obstacles before showing an item pickup")]
         public int spawnPickupRate = 50;
@@ -120,9 +124,9 @@ using TMPro;
         [SerializeField]
         private GameObject tutorialSpace;
         [SerializeField]
-        private GameObject fuelLeft;
+        public GameObject fuelLeft;
         [SerializeField]
-        private GameObject infiniteFuelButton;
+        public GameObject infiniteFuelButton;
         /*[SerializeField]
         private GameObject infiniteDurabilityButton;*/
 
@@ -242,8 +246,6 @@ using TMPro;
                 MetersPassed();
             }
 
-            //IncreaseMetersPassed();
-
 			// Delay the start of the game
 			if ( startDelay > 0 )
 			{
@@ -349,7 +351,7 @@ using TMPro;
                                 spawnPickupIndex++;
 
                                 // Reset the index if we reach the end of the list
-                                if (spawnPickupIndex > spawnPickups.Length - 1) spawnPickupIndex = 0;
+                                if (spawnPickupIndex > spawnPickups.Count - 1) spawnPickupIndex = 0;
 
                                 // Reset the spawn pick up rate counter
                                 spawnPickupRateCount = spawnPickupRate;
@@ -465,12 +467,14 @@ using TMPro;
         {
             // Change the health value
             playerObject.health += changeValue;
+            playerObject.healthLeft += changeValue;
             
             // Limit the value of the health to the maximum allowed value
             if (playerObject.health > playerObject.healthMax) playerObject.health = playerObject.healthMax;
+            if (playerObject.healthLeft > playerObject.healthMax) playerObject.healthLeft = playerObject.healthMax;
 
-            // If we are recieving damage, check if we should die
-            if ( loseHealthDelayCount <= 0 && changeValue < 0 )
+        // If we are recieving damage, check if we should die
+        if ( loseHealthDelayCount <= 0 && changeValue < 0 )
             {
                 if (playerObject.health <= 0)
                 {
@@ -533,12 +537,6 @@ using TMPro;
             playerObject.speed += levelUpSpeedIncrease;
         }
 
-        void SetScoreMultiplier( int setValue )
-		{
-			// Set the score multiplier
-			scoreMultiplier = setValue;
-		}
-
         /// <param name="showMenu">If set to <c>true</c> show menu.</param>
         public void Pause(bool showMenu)
         {
@@ -579,8 +577,6 @@ using TMPro;
                 yield return new WaitForSeconds(1f);
 				//Show the game over screen
 				gameOverCanvas.gameObject.SetActive(true);
-
-                CheckForDeath();
 				
 				//Write the score text
 				gameOverCanvas.Find("Base/ZombiesKilledPanel/TextScore").GetComponent<TextMeshProUGUI>().text = " " + score.ToString();
@@ -637,6 +633,7 @@ using TMPro;
             Time.timeScale = 1.0f;
             if (pauseCanvas) pauseCanvas.gameObject.SetActive(false);
             if (gameCanvas) gameCanvas.gameObject.SetActive(true);
+            playerObject.playerCar.SetActive(true);
         }
 
         public void  MainMenu()
@@ -644,27 +641,9 @@ using TMPro;
 			//SceneManager.LoadScene(mainMenuLevelName);
             Time.timeScale = 1.0f;
             isPaused = false;
+            turnOffMusic.TurnMusicOff();
+            turnOffSound.TurnSoundOff();
 		}
-
-        private void CheckForDeath()
-        {
-            /*if (deathCounter % 5 == 0)
-            {
-                infiniteFuelButton.gameObject.SetActive(true);
-            } else
-            {
-                infiniteFuelButton.gameObject.SetActive(false);
-            }*/
-
-            /*if (deathCounter % 4 == 0)
-            {
-                infiniteDurabilityButton.gameObject.SetActive(true);
-            }
-            else
-            {
-                infiniteDurabilityButton.gameObject.SetActive(false);
-            }*/
-    }
 
         void OnDrawGizmos()
         {

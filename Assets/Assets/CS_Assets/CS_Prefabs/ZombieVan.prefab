@@ -4862,7 +4862,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &4000012999552710
 Transform:
@@ -4945,7 +4945,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &4000010439071356
 Transform:
@@ -5028,7 +5028,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 0
 --- !u!4 &4000012206169988
 Transform:
@@ -5117,7 +5117,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 0
 --- !u!4 &4000014260810442
 Transform:
@@ -5200,7 +5200,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &4000010385017062
 Transform:
@@ -5315,7 +5315,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 0
 --- !u!4 &4000012187328688
 Transform:
@@ -5398,7 +5398,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &4000010263324398
 Transform:
@@ -5481,7 +5481,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 0
 --- !u!4 &4000013389473746
 Transform:
@@ -5636,11 +5636,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   admobReward: {fileID: 0}
   health: 100
+  healthLeft: 0
   fuel: 100
   fuelLeft: 100
   speed: 10
   turnSpeed: 2.8
-  turnRange: 30
+  turnRange: 25
   deathEffect: {fileID: 4000012626389198, guid: 5eb372ab6fae0714ba3aa66e394992df, type: 3}
   zombieExplodeAudioSource: {fileID: 0}
   barrelAudioSource: {fileID: 0}
@@ -5648,6 +5649,10 @@ MonoBehaviour:
   pickUpAudioSource: {fileID: 0}
   vehicleExplodeAudioSource: {fileID: 0}
   moneyEffect: {fileID: 496212, guid: c2f0337ff13d710419e4a0027008f555, type: 3}
+  playerCar: {fileID: 2794169189532158743}
+  headLights:
+  - {fileID: 8001133464341747859}
+  - {fileID: 1700954799480768109}
 --- !u!95 &95000011849155870
 Animator:
   serializedVersion: 5
@@ -5920,7 +5925,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 0
 --- !u!4 &2569812503796483192
 Transform:
@@ -6142,7 +6147,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 0
 --- !u!4 &8709993501503816911
 Transform:
@@ -6229,9 +6234,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4000013581910178}
     m_Modifications:
+    - target: {fileID: 1149657256228330, guid: f65170bd5d5614c42a091c24c0f8104c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326241270668292, guid: f65170bd5d5614c42a091c24c0f8104c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1467170628924414, guid: f65170bd5d5614c42a091c24c0f8104c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1572266532443468, guid: f65170bd5d5614c42a091c24c0f8104c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1665187737447004, guid: f65170bd5d5614c42a091c24c0f8104c, type: 3}
       propertyPath: m_Name
       value: SM_Veh_Buggy_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665187737447004, guid: f65170bd5d5614c42a091c24c0f8104c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1712449046460942, guid: f65170bd5d5614c42a091c24c0f8104c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1828773218425442, guid: f65170bd5d5614c42a091c24c0f8104c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1870291330528106, guid: f65170bd5d5614c42a091c24c0f8104c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1888123023810674, guid: f65170bd5d5614c42a091c24c0f8104c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4373160285334050, guid: f65170bd5d5614c42a091c24c0f8104c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

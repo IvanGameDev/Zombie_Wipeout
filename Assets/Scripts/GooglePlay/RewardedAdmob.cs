@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using GoogleMobileAds;
 using GoogleMobileAds.Api;
+using ZombieDriveGame;
 
 public class RewardedAdmob : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class RewardedAdmob : MonoBehaviour
     public bool isAdClosed;
 
     private RewardedAd _rewardedAd;
+
+    [SerializeField]
+    private GameObject wifiConnection;
 
     [SerializeField]
     private GameObject timerForResume;
@@ -84,16 +88,21 @@ public class RewardedAdmob : MonoBehaviour
                 if (isAdOpened == true && isRewardGiven == true && gameController.isGameOver == true)
                 {
                     player.fuel += 2000000000;
+                    player.fuelLeft += 2000000000;
                     player.health += 75;
+                    player.healthLeft += 75;
+                    player.playerCar.SetActive(true);
                 }
                 // TODO: Reward the user.
                 Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
-                //RegisterReloadHandler(_rewardedAd);
             });
+
+            _rewardedAd.Destroy();
+            RegisterReloadHandler(_rewardedAd);
         }
     }
 
-    /*private void RegisterReloadHandler(RewardedAd ad)
+    private void RegisterReloadHandler(RewardedAd ad)
     {
         // Raised when the ad closed full screen content.
         ad.OnAdFullScreenContentClosed += () =>
@@ -112,7 +121,7 @@ public class RewardedAdmob : MonoBehaviour
             // Reload the ad so that we can show another as soon as possible.
             LoadRewardedAd();
         };
-    }*/
+    }
 
     private void RegisterEventHandlers(RewardedAd ad)
     {
@@ -127,9 +136,20 @@ public class RewardedAdmob : MonoBehaviour
         ad.OnAdImpressionRecorded += () =>
         {
             Debug.Log("Rewarded ad recorded an impression.");
-            isAdOpened = true;
-            isRewardGiven = true;
-            Time.timeScale = 0f;
+            if(Application.internetReachability == NetworkReachability.NotReachable)
+            {
+                gameController.isGameOver = false;
+                wifiConnection.gameObject.SetActive(true);
+            }
+            else
+            {
+                wifiConnection.gameObject.SetActive(false);
+                gameController.isGameOver = true;
+                isRewardGiven = true;
+                isAdOpened = true;
+                Time.timeScale = 0f;
+
+            } 
             Debug.Log("Rewarded.");
             // here goes the reward
         };
@@ -179,6 +199,10 @@ public class RewardedAdmob : MonoBehaviour
                 isRewardGiven = true;
                 gameController.isGameOver = false;
                 timerForResume.SetActive(false);
+                gameController.fuelLeft.SetActive(false);
+                gameController.spawnPickups.RemoveAt(0);
+                gameController.spawnPickupIndex = 0;
+                player.EnableLights();
             }
         }
 

@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
+using ZombieDriveGame;
 
-    public class ZDGPlayer : MonoBehaviour
+public class ZDGPlayer : MonoBehaviour
     {
         public RewardedAdmob admobReward;
         
@@ -34,6 +35,8 @@ using System.Collections;
         public AudioSource vehicleExplodeAudioSource;
 
         public Transform moneyEffect;
+        public GameObject playerCar;
+        public Light[] headLights;
 
         public void Die()
         {
@@ -41,6 +44,9 @@ using System.Collections;
             if (deathEffect) Instantiate(deathEffect, transform.position, transform.rotation);
 
             if(deathEffect) vehicleExplodeAudioSource.Play();
+            playerCar.SetActive(false);
+
+            DisableLights();
 
             // Remove the player from the game
             //Destroy(gameObject);
@@ -76,6 +82,22 @@ using System.Collections;
         if (other.gameObject.CompareTag("PoliceZombie"))
         {
             zombieExplodeAudioSource.Play();
+        }
+    }
+
+    private void DisableLights()
+    {
+        for (int i = 0; i < headLights.Length; i++)
+        {
+            headLights[i].enabled = false;
+        }
+    }
+
+    public void EnableLights()
+    {
+        for (int i = 0; i < headLights.Length; i++)
+        {
+            headLights[i].enabled = true;
         }
     }
 }
