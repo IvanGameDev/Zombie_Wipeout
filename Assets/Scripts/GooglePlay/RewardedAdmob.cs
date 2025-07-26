@@ -5,6 +5,7 @@ using System;
 using GoogleMobileAds;
 using GoogleMobileAds.Api;
 using ZombieDriveGame;
+using UnityEngine.UI;
 
 public class RewardedAdmob : MonoBehaviour
 {
@@ -92,6 +93,7 @@ public class RewardedAdmob : MonoBehaviour
                     player.health += 75;
                     player.healthLeft += 75;
                     player.playerCar.SetActive(true);
+                    gameController.healthCanvas.GetComponent<Image>().fillAmount = player.health;
                 }
                 // TODO: Reward the user.
                 Debug.Log(String.Format(rewardMsg, reward.Type, reward.Amount));
@@ -148,8 +150,8 @@ public class RewardedAdmob : MonoBehaviour
                 isRewardGiven = true;
                 isAdOpened = true;
                 Time.timeScale = 0f;
-
-            } 
+                Debug.Log("Rewarded.");
+            }
             Debug.Log("Rewarded.");
             // here goes the reward
         };

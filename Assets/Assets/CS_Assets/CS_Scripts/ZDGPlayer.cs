@@ -41,6 +41,7 @@ public class ZDGPlayer : MonoBehaviour
         public void Die()
         {
             // Create a death effect at the position of the player
+            // Use this line for editing death effect
             if (deathEffect) Instantiate(deathEffect, transform.position, transform.rotation);
 
             if(deathEffect) vehicleExplodeAudioSource.Play();
